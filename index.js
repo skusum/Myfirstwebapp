@@ -4,6 +4,7 @@ const app = express();
 var mongoose = require("mongoose");
 const model = require("./model");
 const path = require("path");
+const port = process.env.PORT || 3000
 ///MOngog DB Connection
 var mongoDB =
   // "mongodb+srv://Requin:Requin@cluster0.0vcok.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
@@ -50,6 +51,6 @@ app.post("/search", (req, res) => {
     .catch((error) => console.error(error));
 });
 
-app.listen(8080, function () {
-  console.log("listening on 8080");
+app.listen(port, () => {
+  console.log('listening to the port at ${port}')
 });
